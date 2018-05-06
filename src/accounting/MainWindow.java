@@ -3,15 +3,19 @@ package accounting;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainWindow {
 
 	private JFrame frame;
-
+	
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void open() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -28,16 +32,24 @@ public class MainWindow {
 	 * Create the application.
 	 */
 	public MainWindow() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+			}
+		});
+		btnNewButton.setBounds(123, 103, 89, 23);
+		frame.getContentPane().add(btnNewButton);
+	
 	}
 
+	public void setVisability(boolean visability) {
+		frame.setVisible(visability);
+	}
+	
 }
