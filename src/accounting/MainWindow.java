@@ -16,6 +16,7 @@ public class MainWindow {
 	 * Launch the application.
 	 */
 	public void open() {
+		System.out.println("starting main window");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

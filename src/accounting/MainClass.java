@@ -1,18 +1,18 @@
 package accounting;
 
-import javax.security.auth.login.LoginContext;
 
 public class MainClass {
 	
 	protected boolean isPasswordCorrect = false;
-	
+	static MainWindow  mainWin = new MainWindow();
+	static LoginPage loginWin = new LoginPage();
 	
 	public static void main(String[] args) {
-		MainWindow mainWin = new MainWindow();
-		LoginPage loginWin = new LoginPage();
-		
 		loginWin.open();
-			
+		
+	}
+	public static void runMainWin() {
+		mainWin.open();
 	}
 
 }
